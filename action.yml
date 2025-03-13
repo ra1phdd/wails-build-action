@@ -42,7 +42,7 @@ inputs:
   wails-version:
     description: "Wails version to use"
     required: false
-    default: "v3.0.0-alpha.9"
+    default: "latest"
   wails-build-webview2:
     description: "Webview2 installer method [download,embed,browser,error]"
     required: false
@@ -184,7 +184,7 @@ runs:
     # install wails
     - name: Install Wails
       if: inputs.build == 'true' && inputs.wails-dev-build == 'false'
-      run: go install github.com/wailsapp/wails/v3/cmd/wails@${{inputs.wails-version}}
+      run: go install github.com/wailsapp/wails/v3/cmd/wails3@${{inputs.wails-version}}
       shell: bash
     - name: Install macOS Wails deps
       if: runner.os == 'macOS'
