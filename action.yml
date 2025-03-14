@@ -195,6 +195,7 @@ runs:
       if: inputs.build == 'true'
       env:
         BUILD_OPTIONS: ${{ steps.build_options.outputs.BUILD_OPTIONS }}
+        PRODUCTION: true
       working-directory: ${{ inputs.app-working-directory }}
       run: wails3 build
       shell: bash
